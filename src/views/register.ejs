@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <div class="form">
+            <form action="/register" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <label for="username"><span>Username:</span>
+                    <input type="text" id="username" name="username">
+                </label>
+                <label for="password"><span>Password:</span>
+                    <input type="password" id="password" name="password">
+                </label>
+                <label for="email"><span>Email:</span>
+                    <input type="email" id="email" name="email">
+                </label>
+                <input type="submit" value="Register">
+                <button type="button" onclick="location.href='/'">Login on Main Page</button> 
+            </form>
+        </div>
+    </div>
+</body>
+</html>

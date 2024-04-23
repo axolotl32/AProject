@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/add-project.css">
+</head>
+
+<body>
+    <h1>Add a New Project</h1>
+
+    <form action="/add-project" method="POST">
+
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <input type="hidden" id="uid" name="uid" value="<%= uid %>">
+
+        <label for="title">Project Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Project Description:</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" required>
+
+        <label for="phase">Phase:</label>
+        <select id="phase" name="phase" required>
+            <option value="design">Design</option>
+            <option value="development">Development</option>
+            <option value="testing">Testing</option>
+            <option value="deployment">Deployment</option>
+            <option value="complete">Complete</option>
+        </select>
+
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" required>
+
+        <button type="submit">Add Project</button>
+    </form>
+</body>
+
+</html>

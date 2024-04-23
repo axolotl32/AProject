@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/project-details.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="project-details">
+            <h2><%= project.title %></h2>
+            <p class="project-start-date">Start Date:<%= project.start_date %></p>
+            <p class="project-end-date">End Date: <%= project.end_date %></p>
+            <p>Description: <%= project.description %></p>
+            <p>Phase: <%= project.phase %></p>
+            <p>Created by: <%= project.username %></p>
+            <% if (username) { %>
+            <button onclick="location.href='/update-project/<%= project.pid %>'">Update Project</button>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

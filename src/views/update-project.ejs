@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/update-project.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Update Project</h1>
+        <form action="/update-project/<%= project.pid %>" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" value="<%= project.title %>"><br>
+            <label for="start_date">Start Date:</label><br>
+            <input type="date" id="start_date" name="start_date" value="<%= project.start_date %>"><br>
+            <label for="description">Description:</label><br>
+            <textarea id="description" name="description"><%= project.description %></textarea><br>
+            <label for="end_date">End Date:</label><br>
+            <input type="date" id="end_date" name="end_date" value="<%= project.end_date %>"><br>
+            <label for="phase">Phase:</label><br>
+            <select id="phase" name="phase">
+                <option value="design" <%=project.phase==='design' ? 'selected' : '' %>>Design</option>
+                <option value="development" <%=project.phase==='development' ? 'selected' : '' %>>Development</option>
+                <option value="testing" <%=project.phase==='testing' ? 'selected' : '' %>>Testing</option>
+                <option value="deployment" <%=project.phase==='deployment' ? 'selected' : '' %>>Deployment</option>
+                <option value="complete" <%=project.phase==='complete' ? 'selected' : '' %>>Complete</option>
+            </select><br>
+            <input type="hidden" id="uid" name="uid" value="<%= uid %>">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</body>
+
+</html>

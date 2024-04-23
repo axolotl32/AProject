@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/index.css">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <h1 onclick="location.href='/'">AProject</h1>
+        <div class="nav-buttons">
+            <% if (username) { %>
+            <h4>Welcome, <%= username %>!</h4>
+                <button onclick="location.href='/logout'">Sign Out</button>
+                <% } else { %>
+                    <form action="/login" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <input type="text" id="username" name="username" placeholder="Username">
+                        <input type="password" id="password" name="password" placeholder="Password">
+                        <button type="submit">Log In</button>
+                    </form>
+                    <span id="or-text">OR</span>
+                    <button onclick="location.href='/register'">Register</button>
+                    <% } %>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Projects</h1> 
+        </div>
+
+        <button class="add-project-button" onclick="location.href='/add-project'">Add Project</button>
+        <div class="search-bar-container">
+            <input class="search-bar" type="text" id="search" onkeyup="filterProjects()"
+                placeholder="Search for projects by title or short-hand date (DD/MM/YYYY)">
+        </div>
+
+        <% for (var i=0; i < projects.length; i++) { %>
+            <div class="project">
+                <h2><a href="/project/<%= projects[i].pid %>">
+                        <%= projects[i].title %>
+                    </a></h2>
+                <p>
+                    <%= new Date(projects[i].start_date).toLocaleDateString('en-US', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}) %>
+                    <%# javascript Date object formatting from SQL server %>
+                </p>
+                <p>
+                    <%= projects[i].description %>
+                </p>
+            </div>
+        <% } %>
+
+        <script>
+            function filterProjects() {
+                var input, filter, projects, project, a, p, i, txtValue, dateValue, shortDateValue;
+                input = document.getElementById('search');
+                filter = input.value.toUpperCase();
+                projects = document.getElementsByClassName('project');
+                for (i = 0; i < projects.length; i++) {
+                    a = projects[i].getElementsByTagName("h2")[0];
+                    p = projects[i].getElementsByTagName("p")[0]; // get the first <p> element which contains the date
+                    txtValue = a.textContent || a.innerText;
+                    dateValue = p.textContent || p.innerText; // get the date text
+                    shortDateValue = new Date(dateValue).toLocaleDateString('en-GB'); // get the date in short format
+                    if (txtValue.toUpperCase().indexOf(filter) > -1 || dateValue.toUpperCase().indexOf(filter) > -1 || shortDateValue.toUpperCase().indexOf(filter) > -1) {
+                        projects[i].style.display = "";
+                    } else {
+                        projects[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+
+</body>
+
+</html>
