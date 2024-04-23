@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
 body {
-    background-color: #3c1361;
-    font-family: 'Noto Sans', sans-serif;
-    color: #d8b6ff;
+    background-color: #0a192f;
+    font-family: 'Arial', sans-serif;
+    color: #ccd6f6;
     margin: 0;
     padding: 0;
+
 }
 
 .container {
@@ -21,41 +20,41 @@ body {
 }
 
 .header h1 {
-    color: #b388ff; 
+    color: #64ffda; 
 }
 
 .header button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #b388ff;
-    color: #3c1361;
+    background-color: #64ffda;
+    color: #0a192f;
     cursor: pointer;
 }
 
 .header button:hover {
-    background-color: #d8b6ff;
-    color: #3c1361;
+    background-color: #ccd6f6;
+    color: #0a192f;
 }
 
 .project {
-    background-color: #5a189a;
+    background-color: #172a45;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
 }
 
 .project a {
-    color: #b388ff;
+    color: #64ffda;
     text-decoration: none;
 }
 
 .project a:hover {
-    color: #d8b6ff;
+    color: #ccd6f6;
 }
 
 .header h2 {
-    color: #b388ff;
+    color: #64ffda;
 }
 
 .navbar {
@@ -63,18 +62,18 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #5a189a;
+    background-color: #172a45;
     height: 25px;
 }
 
 .navbar h1 {
-    color: #b388ff; 
+    color: #64ffda; 
     font-weight: bold; 
     text-align: left;   
 }
 
 .navbar h4 {
-    color: #d8b6ff; 
+    color: #d9d9d9; 
     margin-left: auto; 
 }
 
@@ -89,8 +88,8 @@ body {
     padding: 5px;
     border: none;
     border-radius: 5px;
-    background-color: #3c1361;
-    color: #d8b6ff;
+    background-color: #0a192f;
+    color: #ccd6f6;
     width: 150px;
 }
 
@@ -99,8 +98,8 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #b388ff;
-    color: #3c1361;
+    background-color: #64ffda;
+    color: #0a192f;
     cursor: pointer;
 }
 
@@ -109,19 +108,19 @@ body {
 }
 
 .navbar button:hover {
-    background-color: #d8b6ff;
-    color: #3c1361;
+    background-color: #ccd6f6;
+    color: #0a192f;
 }
 
 #or-text {
     margin: 0 10px;
     font-weight: 600;
-    color: #d8b6ff;
+    color: #ccd6f6;
 }
 
 .add-project-button {
-    background-color: #b388ff;
-    color: #3c1361;
+    background-color: #64ffda;
+    color: #0a192f;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -138,11 +137,14 @@ body {
 .search-bar {
     padding: 5px;
     border: none;
-    border-bottom: 3px solid #d8b6ff8c;
-    background-color: #3c1361;
-    color: #d8b6ff;
+    border-bottom: 3px solid #ccd6f68c;
+    background-color: #0a192f;
+    color: #ccd6f6;
     width: 99%;
+    
 }
+
+
 
 .pagination {
     display: flex;
@@ -155,14 +157,14 @@ body {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #b388ff;
-    color: #3c1361;
+    background-color: #64ffda;
+    color: #0a192f;
     cursor: pointer;
 }
 
 .pagination button:hover {
-    background-color: #d8b6ff;
-    color: #3c1361;
+    background-color: #ccd6f6;
+    color: #0a192f;
 }
 
 ::-webkit-scrollbar {
@@ -170,14 +172,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: #3c1361;
+    background: #0a192f;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #b388ff;
-    border: 3px solid #3c1361;
+    background-color: #64ffda;
+    border: 3px solid #0a192f;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #d8b6ff;
+    background-color: #ccd6f6;/
 }
