@@ -8,6 +8,8 @@ const dotenv = require('dotenv');
 const helmet = require('helmet');
 const rateLimit = require("express-rate-limit");
 const path = require('path');
+const ua = require('universal-analytics');
+
 
 
 const csurf = require('csurf');
@@ -71,7 +73,11 @@ app.use(limiter);
 const csrfProtection = csurf({ cookie: true });
 app.use(csrfProtection);
 
-
+app.use((req, res, next) => {
+  const visitor = ua('G-LYFLE621S8'); 
+  visitor.pageview(req.url).send();
+  next();
+});
 
 app.get('/', (req, res) => {
   let query = "SELECT * FROM `projects` ORDER BY pid DESC"; // query database to get all the projects
