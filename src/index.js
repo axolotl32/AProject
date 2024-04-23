@@ -7,6 +7,7 @@ const bcrypt = require('bcryptjs');
 const dotenv = require('dotenv');
 const helmet = require('helmet');
 const rateLimit = require("express-rate-limit");
+const path = require('path');
 
 
 const csurf = require('csurf');
@@ -57,7 +58,7 @@ app.set('port', process.env.PORT);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(__dirname + "../public/"));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.json());
 app.use(session({
   secret: process.env.SESSION_SECRET,
